@@ -258,3 +258,19 @@ const logSum= (a,b) => {
 }
 
  logSum(5,6);
+
+ //--------Strategy Pattern - Function ile davranıs degiştirme-------------
+
+ function calculate(a,b,strategyFn){
+    return strategyFn(a,b);
+ }
+
+ const strategies ={
+    add:(x,y) => x+y,
+    subtract : (x,y) => x-y,
+    power : (x,y) => x**y
+ }
+
+ console.log("Toplama : ",calculate(3,4,strategies.add));
+ console.log("Cıkarma : ",calculate(10,4,strategies.subtract));
+ counter1.localExample("Üs alma : ",calculate(2,5,strategies.power)); 
